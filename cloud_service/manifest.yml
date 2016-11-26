@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: john_firmware_test
-  host: john-firmware-test
+  name:
+  host:
   disk_quota: 1024M

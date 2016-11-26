@@ -28,7 +28,7 @@ exports.httpPost = (postObject, isPushDevice, isGateway, callback) => {
 function addDevicePost (payload, isPushDevice, isGateway, callback) {
     console.log(payload);
     let deviceJson = [{
-        "org": "b3g117",
+        "org": "",
         "id": payload.deviceId,
         "type": payload.typeId,
         "auth-method": "token",

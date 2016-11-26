@@ -39,7 +39,7 @@ exports.httpDelete = (deleteObject) => {
 
 exports.addDevice = (type, id, authUsername, authPassword) => {
     const postObject = {
-        url: `https://b3g117.internetofthings.ibmcloud.com/api/v0002/device/types/${type}/devices`,
+        url: `https://xxx.internetofthings.ibmcloud.com/api/v0002/device/types/${type}/devices`,
         body: {  "deviceId": id,
             "deviceInfo": {
                 "serialNumber": "",
@@ -70,7 +70,7 @@ exports.addDevice = (type, id, authUsername, authPassword) => {
 
 exports.fwDownload = (type, id, downloadUrl, version, verifier, authUsername, authPassword, authToken) => {
     const postObject = {
-        url: 'https://b3g117.internetofthings.ibmcloud.com/api/v0002/mgmt/requests/?deviceManagementInitiationRequest',
+        url: 'https://xxx.internetofthings.ibmcloud.com/api/v0002/mgmt/requests/?deviceManagementInitiationRequest',
         body: {
             "action": "firmware/download",
             "parameters": [

@@ -78,7 +78,7 @@ exports.deviceActionResponse = (payload) => {
                 gatewayClient.changeUpdateState(payload.type, payload.id, gatewayClient.FIRMWAREUPDATESTATE.SUCCESS);
                 gatewayClient.changeState(payload.type, payload.id, gatewayClient.FIRMWARESTATE.IDLE);
 
-                const url = `https://b3g117.internetofthings.ibmcloud.com/api/v0002/device/types/${payload.type}/devices/${payload.id}`;
+                const url = `https://xxx.internetofthings.ibmcloud.com/api/v0002/device/types/${payload.type}/devices/${payload.id}`;
                 const body = {
                     "deviceInfo": {
                         "fwVersion": payload.version

@@ -8,26 +8,10 @@ const constants = require('./constants.json');
 const config = require('./config_gateway.json');
 
 const device = require('../devices/device_app');
-//const managedDevice = require('./iotf/managed_devices');
-//managedDevice.startManagedDevice();
 device.runDevice();
 managedGateway.startManagedGateway(() => {
     localMqttGateway.connectMqtt();
 });
-
-//require('./some_app/some_app').iotAppSetup();
-
-/*if(config.DEVICE_ADDED_IOTF === false) {
-    require('./startup_routine/startup_routine').startupRoutine(() => {
-        managedGateway.startManagedGateway(() => {
-            localMqttGateway.connectMqtt();
-        });
-    });
-} else {
-    managedGateway.startManagedGateway(() => {
-        localMqttGateway.connectMqtt();
-    });
-}*/
 
 app.use(express.static(__dirname + '/'));
 

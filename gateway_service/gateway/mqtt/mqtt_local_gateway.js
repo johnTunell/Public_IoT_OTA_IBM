@@ -5,15 +5,6 @@ const mqttPacket = require('mqtt-packet')
 const parser = mqttPacket.parser()
 let client;
 
-//let iotfClient;
-
-
-/*let payload = {
- status: 'online' or 'offline (DISCONNECTED HIMSELF' or disconnected(DISCONNECTED WITH ERROR "LAST WILL");
- }*/
-
-// Subscribe or unsubscribe
-//
 
 exports.connectMqtt = () => {
     let mqtt = require('mqtt');
@@ -27,17 +18,6 @@ exports.connectMqtt = () => {
 
         console.log('listening on topics..');
 
-        /*
-         // TEST
-         let json = {
-         state: 'succesful',
-         data: 'some data'
-         }
-
-         setTimeout(() => {
-         client.publish(`iot-2/type/E103/id/2/evt/${constants.DEVICE_SENSOR_READING_TOPIC}/fmt/json`,  JSON.stringify(json));
-         },8000);*/
-
     });
 
     parser.on('packet', function(packet) {
@@ -50,8 +30,6 @@ exports.connectMqtt = () => {
         console.log(`Topic: ${topic}`);
         console.log(`Message: ${message}`);
         console.log(packet);
-//        console.log(String(packet.retain));
-  //      packet = String(packet);
         console.log(packet.retain)
         message = JSON.parse(message.toString());
         if(new RegExp(constants.DEVICE_CONNECTED_RE).exec(topic)) {
