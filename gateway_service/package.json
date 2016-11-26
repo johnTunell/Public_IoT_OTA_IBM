@@ -1,0 +1,24 @@
+{
+  "name": "upwis_summer2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "mqtt-packet": "^5.1.0",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "ibmiotf": "^0.2.22",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7"
+  }
+}

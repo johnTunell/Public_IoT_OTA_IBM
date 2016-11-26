@@ -1,0 +1,25 @@
+// Passwords etc ofcourse removed from public git repo...
+
+{
+  "IOTF_REST_API_URL" : "",
+  "IOTF_REST_API_AUTH_USERNAME" : "",
+  "IOTF_REST_API_AUTH_PASSWORD" : "",
+  "FIRMWARE_DOWNLOAD" : "fw_download",
+  "FIRMWARE_UPDATE" : "fw_update",
+  "IMAGE_DOWNLOAD" : "img_download",
+  "REQUEST_DELETE" : "request",
+  "OBJECT_STORAGE_DOWNLOAD_URL" : "",
+  "OBJECT_STORAGE_CONTAINER_URL" : "",
+  "OBJECT_STORAGE_CREDENTIALS" : {
+    "auth_url": "https://identity.open.softlayer.com",
+    "project": "",
+    "projectId": "",
+    "region": "dallas",
+    "userId": "",
+    "username": "",
+    "password": "",
+    "domainId": "",
+    "domainName": "",
+    "role": "admin"
+  }
+}

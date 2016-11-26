@@ -1,0 +1,17 @@
+// Passwords excluded from git...
+
+{
+  "FIRMWARE_DOWNLOAD" : "fw_download",
+  "FIRMWARE_UPDATE" :"fw_update",
+  "IMAGE_DOWNLOAD" :"img_download",
+  "SUCCESS" :"successful",
+  "IOTF_AUTH_USERNAME" : ,
+  "IOTF_AUTH_PASSWORD" : ,
+  "LOCAL_URL" : "http://[bbbb::1]:5000",
+  "DEVICE_MANAGMENT_RESPONSE_TOPIC" : "dev_mgt_res",
+  "DEVICE_SENSOR_READING_TOPIC" : "status",
+  "DM_UPWIS_DEVICE_CONNECT_TOPIC" : "iotdm-u/type/+/id/+",
+  "DEVICE_MANAGMENT_RESPONSE_RE" : "^iot-2\\/type\\/(.+)\\/id\\/(.+)\\/cmd\\/(.+)\\/fmt\\/(.+)",
+  "DEVICE_SENSOR_READING_RE" : "^iot-2\\/type\\/(.+)\\/id\\/(.+)\\/evt\\/(.+)\\/fmt\\/(.+)",
+  "DEVICE_CONNECTED_RE" : "^iotdm-u\\/type\\/(.+)\\/id\\/(.+)"
+}

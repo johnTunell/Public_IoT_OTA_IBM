@@ -1,0 +1,80 @@
+########## SEND A FIRMWARE DOWNLOAD $$$$$$$$$$$
+
+POST TO:
+
+http://XXX.mybluemix.net/cmd/fw_download/type/fullsens/id/d08c7b150016
+
+With BASIC AUTH
+
+Username:  XXXX
+Password:  XXXX
+
+With form-date file: 
+key: upl
+value: testfile.txt
+
+
+The cloud service will store the file in objectstorage. The URL to download the file is then included as 'uri' in the request to Watson IOT.
+The Authentication token to dowload files from objectstorage is also included as the 'name'.
+The filename "testfile" will be the version and the verifier will be a CRC32.
+
+So the request to device managment on Watson IOT looks like this:
+
+body: {
+            "action": "firmware/download",
+            "parameters": [
+                {
+                    "name": "version",
+                    "value": FILENAME (EX: testfile)
+                },
+                {
+                    "name": "uri",
+                    "value": URL_TO_FILE_IN_OBJECTSTORAGE (EX:href="/v2/service_instances/xxxx/region/dallas/container/fullsens_img_download/lab1_test.sml" )
+                },
+                {
+                    "name": "verifier",
+                    "value": CRC32 ()
+                },
+		{
+                    "name": "name",
+                    "value": AUTHENTICATION TOKEN
+                }
+            ],
+}
+
+
+OBS OBS!! Authentication token ska anvandas i headern nar du gor en get request for att hamta ner filen, pa foljande satt:
+
+headers: {
+                'X-Auth-Token': authToken
+            }
+}
+
+
+############# RESET A DEVICE MANAGMENT REQUEST ############
+
+http://XXX.mybluemix.net/cmd/request/type/fullsens/id/d08c7b150016
+
+Deletes the current pending device managment request for the device
+
+
+########### SEND A IMAGE DOWNLOAD #############
+
+POST TO:
+
+http://xxx.mybluemix.net/cmd/img_download/type/fullsens/id/d08c7b150016
+
+Exactly the same as firmware download for doing post.
+
+Image download is not using any managment device requests, instead it is sending a device command:
+
+The command has the format
+
+/type/{typeId}/id/{deviceId}/cmd/'img_download'/fmt/'json'/payload
+
+The payload has the same format as firmware download, name being authtoken, uri being the url to the file etc
+
+appClient.publishDeviceCommand(device.typeId, device.deviceId, 'img_download', "json", JSON.stringify(payload))
+
+
+

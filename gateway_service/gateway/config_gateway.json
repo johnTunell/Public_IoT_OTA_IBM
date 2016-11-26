@@ -1,0 +1,14 @@
+// Passwords excluded from git..
+
+{
+  "AUTH_USERNAME": "",
+  "AUTH_PASSWORD": "",
+  "DEVICE_ADDED_IOTF": true,
+  "GATEWAY_DEVICE_CREDENTIALS": {
+    "org": "",
+    "id": "g",
+    "type": "Gateway",
+    "auth-method": "token",
+    "auth-token": ""
+  }
+}
